@@ -1,0 +1,6 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: 'This is my first CFN template for AWS SQS Service'
+
+Resources:
+  SampleQueue:
+    Type: AWS::SQS::Queue

@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: 'This template is for SNS subscription validation from mail id'
+
+Resources:
+  SampleQueue:
+    Type: AWS::SQS::Queue
+  SampleTopic:
+    Type: AWS::SNS::Queue
+    Properties:
+      DisplayName: My Sample Topic
+  MySubscription:
+    Endpoint: shyamsundar0906@gmail.com
+    Protocol: email
+    TopicArn: !Ref 'SampleTopic'

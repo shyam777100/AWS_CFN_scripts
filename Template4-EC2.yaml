@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: 'This is the first template in cloudformation for EC2'
+
+Resources:
+  WebServerInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-04e5276ebb8451442
+      InstanceType: t2.micro
+      Tags:
+        -
+          Key: Name
+          Value: WebServer
+        - 
+          Key: Project
+          Value: CloudFormation
+        -
+          Key: ConstCenter
+          Value: IndiaMarket

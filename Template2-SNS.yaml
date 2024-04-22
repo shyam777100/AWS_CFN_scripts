@@ -1,0 +1,10 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: 'This template is for SNS Service'
+
+Resources:
+  SampleQueue:
+    Type: AWS::SQS::Queue
+  SampleTopic:
+    Type: AWS::SNS::Queue
+    Properties:
+      DisplayName: My Sample Topic

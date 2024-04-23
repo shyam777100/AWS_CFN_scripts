@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: 'In this template we are going to build stack of security group'
+
+Resources:
+  WebServerInstanceNew:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-04e5276ebb8451442
+      InstanceType: t2.micro
+      SecurityGroupIds:
+        -
+          Ref: WebServerSecurityGroup
+      Tags:
+        -
+          Key: Name
+          Value: Web Server WebServerInstanceNew
+
+        - 
+          Key: Project
+          Value: CloudFormation Step By Step
+  WebServerSecurityGroup:
+    Type:  AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security group for web servers 
+      SecurityGroupIngress: 
+        - 
+          IpProtocol: "tcp" 
+          FromPort: 80
+          ToPort: 80
+          CidrIp: "0.0.0.0/0" 
+      Tags:
+        -
+          Key: Name 
+          Value: Web server security group
+          
